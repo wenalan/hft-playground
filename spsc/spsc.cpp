@@ -30,8 +30,7 @@ public:
             producer_counter_.load(std::memory_order_relaxed);
 
         const auto c =
-            //consumer_counter_.load(std::memory_order_acquire);
-            consumer_counter_.load(std::memory_order_relaxed);
+            consumer_counter_.load(std::memory_order_acquire);
 
         if (p - c >= N)
             return false;
